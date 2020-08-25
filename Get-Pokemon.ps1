@@ -64,6 +64,8 @@
         Write-Verbose "Cleaning up"
         Clear-Variable Name,Uri,Pokemon -ErrorAction SilentlyContinue
         Write-Verbose "Done"
+
+        Write-Progress -Activity "Displaying info" -Completed
     } #EndEnd
     
 } #EndFunction
