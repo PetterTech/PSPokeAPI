@@ -1,2 +1,2 @@
 # PSPokeAPI
-A powershell repo for PokeAPI
+A collection powershell functions for grabbing info from the PokeAPI
