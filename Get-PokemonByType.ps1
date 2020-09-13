@@ -26,7 +26,7 @@ function Get-PokemonByType
         Write-Verbose "Type is now $($Type)"
 
         #Setting Uri
-        Write-Verbose "Setting Uri to https://pokeapi.co/api/v2/pokemon/ plus $($Type)"
+        Write-Verbose "Setting Uri to https://pokeapi.co/api/v2/type/ plus $($Type)"
         Write-Progress -Activity "Putting together Uri" -PercentComplete 10
         
         $Uri = "https://pokeapi.co/api/v2/type/" + $Type
