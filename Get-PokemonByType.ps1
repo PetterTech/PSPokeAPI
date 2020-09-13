@@ -63,10 +63,6 @@ function Get-PokemonByType
         Write-Verbose "Showing list output"
         ($Pokemon.pokemon.pokemon) | Select-Object name | Sort-Object Name
 
-        Write-Verbose "Cleaning up"
-        #Clear-Variable Name,Uri,Pokemon,Type -ErrorAction SilentlyContinue
-        Write-Verbose "Done"
-
         Write-Progress -Activity "Displaying info" -Completed
     } #EndEnd
 
