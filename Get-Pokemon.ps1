@@ -15,7 +15,8 @@
     #>
         [CmdletBinding()] 
             Param (
-                [Parameter(Mandatory=$True,Position=0,HelpMessage='Name of pokemon')][string]$Name
+                [Parameter(Mandatory=$True,Position=0,HelpMessage='Name of pokemon')][string]$Name,
+                [switch]$AllInfo
                   )
     Begin {
         #Setting Uri
@@ -59,7 +60,15 @@
         Write-Verbose "Displaying info"
         Write-Progress -Activity "Displaying info" -PercentComplete 90
 
-        $Pokemon | Select-Object Name,ID,@{label="Type";expression={$_.types.type.name}},@{label="Regular Form";expression={$_.sprites.front_default}},@{label="Shiny Form";expression={$_.sprites.front_shiny}}
+        if ($AllInfo) {
+            Write-Verbose "AllInfo detected, displaying all info from API"
+            $Pokemon
+        }
+
+        else {
+            Write-Verbose "Showing filtered output"
+            $Pokemon | Select-Object Name,ID,@{label="Type";expression={$_.types.type.name}},@{label="Regular Form";expression={$_.sprites.front_default}},@{label="Shiny Form";expression={$_.sprites.front_shiny}}
+        }
 
         Write-Verbose "Cleaning up"
         Clear-Variable Name,Uri,Pokemon -ErrorAction SilentlyContinue
