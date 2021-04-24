@@ -4,3 +4,4 @@
 .  $PSScriptRoot\Functions\Get-PokemonMove.ps1
 .  $PSScriptRoot\Functions\Get-RandomPokemon.ps1
 .  $PSScriptRoot\Functions\Get-RandomPokemonMove.ps1
+.  $PSScriptRoot\Functions\Start-PokemonBattle.ps1
